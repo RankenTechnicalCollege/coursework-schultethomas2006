@@ -1,6 +1,6 @@
 /*
-Author: Maria Cruz
-Date: Current Date
+Author: Thomas Schulte
+Date: 9/5/2025
 File Name: styles.css
 */
 
@@ -60,10 +60,47 @@ main a {
 /* Orange */
 
 .orange-hex {
-    
+    background-color: #ffa500;
+}
+
+.orange-rgb {
+    background-color: rgb(255, 165, 0);
+}
+
+.orange-hsl {
+    background-color: hsl(39, 100%, 50%);
 }
 
 /* Purple */
 
+.purple-hex {
+    background-color: #800080;
+}
+
+.purple-rgb {
+    background-color: rgb(128, 0, 128);
+}
+
+.purple-hsl {
+    background-color: hsl(300, 100%, 25%);
+}
 
 /* Green */
+
+.green-hex {
+    background-color: #008000;
+}
+
+.green-rgb {
+    background-color: rgb(0, 128, 0);
+}
+
+.green-hsl{
+    background-color: hsl(120, 100%, 25%);
+}
+
+/* footer color */
+
+.blue-footer {
+    background-color: #add8e6;
+}
