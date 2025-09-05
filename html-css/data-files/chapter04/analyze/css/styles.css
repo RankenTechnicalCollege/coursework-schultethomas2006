@@ -1,4 +1,4 @@
-/* 
+/*
 Name: Thomas Schulte
 Date: 9/5/2025
 Filename: styles.css
@@ -9,7 +9,7 @@ Filename: styles.css
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    border: 0;
 }
 
 /* Body Elements */
@@ -17,7 +17,7 @@ Filename: styles.css
 body {
     padding: 2%;
     background-color: #d1d1e0;
-} 
+}
 
 /* Header Elements */
 
@@ -27,30 +27,30 @@ header h1 {
     font-family: Georgia, Times, serif;
     padding: 3%;
     color: #47476b;
-} 
+}
 
 /* Nav Elements */
 
 nav {
     background-color: #47476b;
-} 
+}
 
-nav ul { 
+nav ul {
     margin: 0;
-} 
+}
 
 nav li {
     display: inline-block;
-    font-size: 1.5em; 
-    font-family: Verdana, Arial, sans-serif; 
+    font-size: 1.5em;
+    font-family: Verdana, Arial, sans-serif;
     font-weight: bold;
     text-decoration: none;
-} 
+}
 
-nav li a { 
-    display: block; 
-    color: #e3eaf8; 
-    padding: 0.5em 2em; 
+nav li a {
+    display: block;
+    color: #e3eaf8;
+    padding: 0.5em 2em;
     text-decoration: none;
 }
 
@@ -59,7 +59,7 @@ main {
     padding: 2%;
     font-family: Geneva, Arial, sans-serif;
     overflow: auto;
-} 
+}
 
 main a {
     color:#47476b;
