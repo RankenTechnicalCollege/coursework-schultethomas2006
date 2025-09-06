@@ -1,0 +1,64 @@
+/* Wrapper div centered */
+#wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Gradient background for body */
+body {
+    background: linear-gradient(to bottom, #e0e0e0, #b0b0b0);
+    font: italic small-caps bold 16px/1.5 "Arial", sans-serif; /* Shorthand font */
+}
+
+/* Gradient background for header */
+header {
+    background: linear-gradient(to right, #333333, #666666);
+    color: #ffffff;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Relative (em) + absolute (px) measurement */
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Hex color example */
+h2 {
+    color: #0066cc;
+}
+
+/* Descendant selector */
+nav ul li a {
+    text-decoration: none;
+}
+
+/* Multiple selectors */
+nav ul, nav li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Child selector */
+main > section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Padding and margin */
+p {
+    padding: 10px;
+    margin: 10px 0;
+    width: 500px;   /* Custom width */
+    height: 150px;  /* Custom height */
+}
+
+/* Pseudo-class selector */
+nav a:hover {
+    color: #00cc66;
+    text-decoration: underline;
+}
