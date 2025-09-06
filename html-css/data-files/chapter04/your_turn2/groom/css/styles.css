@@ -1,0 +1,122 @@
+/*
+Name: Thomas Schulte
+Date: 9/6/2025
+File Name: styles.css
+*/
+
+/* CSS Reset */
+
+body, header, nav, main, footer, h1, h3, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #131313;
+}
+
+p {
+    margin: 1em 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #333333;
+    color: #f8f8f8;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #cc9933;
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 12px 0;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #996600;
+}
+
+/* Clear floats after nav items */
+nav::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+/* ID selector */
+#welcome {
+    background-color: #ffffff;
+    border: 2px solid #cccccc;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+/* Class selector */
+.highlight {
+    color: #cc0000;
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333333;
+    color: #f8f8f8;
+    text-align: center;
+    padding: 15px 10px;
+    clear: both;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
