@@ -1,0 +1,109 @@
+/*
+Name: Thomas Schulte
+Date: 9/6/2025
+File name: styles.css
+*/
+
+/* CSS Reset */
+
+body, header, nav, main, footer, h1, h3, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style rules for image */
+
+img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+/*  HEADER STYLES  */
+header {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    padding: 20px;
+}
+
+header h1 {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* class selector */
+.highlight {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/*  NAVIGATION STYLES  */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff6600;
+}
+
+/*  MAIN CONTENT STYLES  */
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #111111;
+    font-family: Verdana, Geneva, sans-serif;
+    min-height: 300px;
+}
+
+/* ID selector */
+#intro {
+    font-size: 1.2em;
+    border-left: 4px solid #ff6600;
+    padding-left: 10px;
+}
+
+/*  FOOTER STYLES  */
+footer {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff6600;
+}
