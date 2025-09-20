@@ -1,7 +1,7 @@
 /*
-Author:
-Date:
-File Name: 
+Author: Thomas Schulte
+Date: 9/20/2025
+File Name: styles07.css
 */
 
 /* CSS Reset */
@@ -38,4 +38,16 @@ aside {
 footer {
 	font-size: .70em;
 	text-align: center;
+}
+
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.flex-item {
+	flex: 1;
+	min-width: 250px;
 }
