@@ -1,11 +1,11 @@
 /*
-Author:
-Date:
-File Name: 
+Author: Thomas Schulte
+Date: 9/20/2025
+File Name: apply07.css
 */
 
 /* CSS Reset */
-body, header, nav, main, footer, h1, div {
+body, header, nav, main, footer, h1, div, section, article, aside {
     margin: 0;
     padding: 0;
     border: 0;
@@ -17,6 +17,26 @@ body {
 }
 
 /* Style rules for mobile viewport */
+
+section {
+	background-color: #183440;
+	color: #fff;
+	margin-top: 4%;
+	padding: 3%;
+}
+
+article {
+	margin-top: 1%;
+	padding: 2%;
+}
+
+aside {
+	background-color: rgba(24, 52, 64, 0.3);
+	padding: 2%;
+	margin-top: 1%;
+	color: #183440;
+	box-shadow: 4px 4px 10px #183440;
+}
 
 /* Style rule for header */
 header {
@@ -56,12 +76,28 @@ footer {
 
 /* Media Query for Tablet Viewport */
 @media screen and (min-width: 650px), print {
-    
-    
+
+	.grid {
+		display: grid;
+		grid-template-columns: 2;
+		grid-gap: 20px;
+	}
+
+	aside {
+		grid-column: 1 / span 2;
+	}
+
 }
 
 /* Media Query for Desktop Viewport */
 @media screen and (min-width: 1024px), print {
 
-    
+	.grid {
+		grid-template-columns: 4;
+	}
+
+	aside {
+		grid-column: 1 / span 4;
+	}
+
 }
