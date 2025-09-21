@@ -1,12 +1,12 @@
 /*
 Name: Thomas Schulte
-Date: 9/14/2025
+Date: 9/21/2025
 File Name: styles.css
 */
 
 /* CSS Reset */
 
-body, header, nav, main, footer, img, h1, h3, ul {
+body, header, nav, main, footer, img, h1, h3, ul, aside, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -115,6 +115,25 @@ main ul {
     border-radius: 6px;
 }
 
+aside {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-shadow: 4px 4px 10px #c5a687;
+}
+
+figure {
+    border: 4px solid #2a1f14;
+    box-shadow: 6px 6px 10px #c5a687;
+    max-width: 400px;
+    margin: 2% auto;
+}
+
+figcaption {
+    padding: 2%;
+    border-top: 4px solid #2a1f14;
+}
+
 #info ul {
     margin-left: 10%;
 }
@@ -183,6 +202,16 @@ footer a {
         padding: 0.5em;
     }
 
+    .grid {
+        display: grid;
+        grid-template-columns: 2;
+        gap: 10px;
+    }
+
+    aside {
+        grid-column: 1 / span 2;
+    }
+
 }
 
 /* Media Query for Desktop Viewport */
@@ -212,6 +241,17 @@ footer a {
     #info ul {
         margin-left: 5%;
     }
+
+    .grid {
+        grid-template-columns: 3;
+        gap: 30px;
+    }
+
+    aside {
+        grid-column: 1 / span 3;
+        font-size: 2em;
+    }
+
 }
 
 /* Media Query for Large Desktop Viewports */
@@ -232,6 +272,15 @@ footer a {
 
     main {
         background-color: #f6eee4;
+    }
+
+    .grid {
+        grid-template-columns: 4;
+    }
+
+    aside {
+        grid-column: 1 / span 4;
+        font-size: 3em;
     }
 
 }
