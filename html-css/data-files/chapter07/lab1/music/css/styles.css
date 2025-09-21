@@ -1,12 +1,12 @@
 /*
 Author: Thomas Schulte
-Date: 9/14/2025
+Date: 9/21/2025
 File Name: styles.css
 */
 
 /* CSS Reset */
 
-body, header, nav, main, footer, img, h1, ul {
+body, header, nav, main, footer, img, h1, ul, section, aside, figure, figcaption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -19,7 +19,41 @@ img {
     display: block;
 }
 
+/* Style rule for box sizing applies to all elements */
+
+* {
+    box-sizing: border-box;
+}
+
 /* Style rules for mobile viewport */
+
+aside {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #373684;
+    text-shadow: 3px 3px 10px #8280cb;
+}
+
+figure {
+    position: relative;
+    max-width: 275px;
+    margin: 2% auto;
+    border: 8px solid #373684;
+}
+
+figcaption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(55, 54, 132, 0.7);
+    color: #fff;
+    width: 100%;
+    padding: 5% 0;
+    text-align: center;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
 
 /* Hide tab-desk class */
 .tab-desk {
@@ -190,6 +224,16 @@ footer a {
         height: 450px;
     }
 
+    .grid {
+        display: grid;
+        grid-template-columns: 2;
+        gap: 20px;
+    }
+
+    aside {
+        grid-column: 1 / span 2;
+    }
+
 }
 
 /* Media Query for Desktop Viewport */
@@ -233,6 +277,18 @@ footer a {
         margin-bottom: 0;
         margin-left: 2%;
         margin-right: 2%;
+    }
+
+    .grid {
+        grid-template-columns: 4;
+    }
+
+    figcaption {
+        font-size: 1em;
+    }
+
+    aside {
+        grid-column: 1 / span 4;
     }
 
 }
