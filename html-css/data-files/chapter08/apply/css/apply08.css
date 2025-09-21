@@ -1,7 +1,7 @@
 /*
-Author:
-Date:
-File Name: 
+Author: Thomas Schulte
+Date: 9/21/2025
+File Name: apply08.css
 */
 
 /* CSS Reset */
@@ -26,4 +26,43 @@ body {
 footer {
 	font-size: .70em;
 	text-align: center;
+}
+
+/* Style rule for table element */
+
+table {
+	width: 80%;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border: 3px solid #71881b;
+}
+
+/* Table, row, header, and cell formatting */
+table, tr, th, td {
+  border-collapse: collapse;
+  padding: 2%;
+}
+
+/* Caption element */
+caption {
+  font-size: 2em;
+  padding: 2%;
+  margin-top: 2%;
+}
+
+/* Table headers and cells border */
+th, td {
+  border: 1px solid #7188bb;
+}
+
+/* Table data cells text alignment */
+td {
+  text-align: center;
+}
+
+/* Odd row background color */
+tr:nth-child(odd) {
+  background-color: #d3e788;
 }

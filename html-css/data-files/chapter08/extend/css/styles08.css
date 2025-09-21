@@ -1,0 +1,55 @@
+/*
+Author: Thomas Schulte
+Date: 9/21/2025
+File Name: styles08.css
+*/
+
+/* Page background and font */
+body {
+    background-color: #ffe5dc;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Table styling */
+table {
+    border: 3px solid #fd4d0c;
+    border-collapse: collapse;
+    margin: 30px auto;
+    box-shadow: 8px 8px 15px #792101;
+    width: 85%;
+    text-align: center;
+}
+
+/* Caption styling */
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #792101;
+    padding: 12px;
+}
+
+/* Header styling */
+thead th {
+    background-color: #792101;
+    color: white;
+    padding: 10px;
+    border: 2px solid #ffe5dc ;
+}
+
+/* Table cell styling */
+tbody td {
+    border: 2px solid #a22c02  ;
+    padding: 12px;
+}
+
+/* Odd rows background color */
+tbody tr:nth-child(odd) {
+    background-color: #fe9772;
+}
+
+/* Footer note styling */
+.footer-note {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
