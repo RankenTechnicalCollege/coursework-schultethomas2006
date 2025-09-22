@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Survey</title>
+    <link rel="stylesheet" href="css/music-styles.css">
+</head>
+<body>
+    <header>
+        <h1>Music Survey</h1>
+    </header>
+
+    <form action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">E-Mail:</label>
+        <input type="email" id="email" name="email">
+
+        <fieldset>
+            <legend>Select your favorite music genre</legend>
+            <input type="radio" id="rock" name="genre" value="rock">
+            <label for="rock">Rock</label><br>
+            <input type="radio" id="pop" name="genre" value="pop">
+            <label for="pop">Pop</label><br>
+            <input type="radio" id="hiphop" name="genre" value="hiphop">
+            <label for="hiphop">Hip Hop</label><br>
+            <input type="radio" id="electronic" name="genre" value="electronic">
+            <label for="electronic">Electronic</label><br>
+            <input type="radio" id="jazz" name="genre" value="jazz">
+            <label for="jazz">Jazz</label><br>
+            <input type="radio" id="classical" name="genre" value="classical">
+            <label for="classical">Classical</label><br>
+            <input type="radio" id="country" name="genre" value="country">
+            <label for="country">Country</label><br>
+            <input type="radio" id="rnb" name="genre" value="rnb">
+            <label for="rnb">R&B</label><br>
+            <input type="radio" id="other_genre" name="genre" value="other">
+            <label for="other_genre">Other</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Select what music services that you use (one or more)</legend>
+            <input type="checkbox" id="spotify" name="service" value="spotify">
+            <label for="spotify">Spotify</label><br>
+            <input type="checkbox" id="applemusic" name="service" value="applemusic">
+            <label for="applemusic">Apple Music</label><br>
+            <input type="checkbox" id="amazonmusic" name="service" value="amazonmusic">
+            <label for="amazonmusic">Amazon Music</label><br>
+            <input type="checkbox" id="youtubemusic" name="service" value="youtubemusic">
+            <label for="youtubemusic">Youtube Music</label><br>
+            <input type="checkbox" id="siriusxm" name="service" value="siriusxm">
+            <label for="siriusxm">SiriusXM</label><br>
+            <input type="checkbox" id="tidal" name="service" value="tidal">
+            <label for="tidal">TIDAL</label><br>
+            <input type="checkbox" id="qobuz" name="service" value="qobuz">
+            <label for="qobuz">Qobuz</label><br>
+            <input type="checkbox" id="pandora" name="service" value="pandora">
+            <label for="pandora">Pandora</label><br>
+            <input type="checkbox" id="iheartradio" name="service" value="iheartradio">
+            <label for="iheartradio">iHeart Radio</label><br>
+            <input type="checkbox" id="deezer" name="service" value="deezer">
+            <label for="deezer">Deezer</label><br>
+            <input type="checkbox" id="soundcloud" name="service" value="soundcloud">
+            <label for="soundcloud">SoundCloud</label><br>
+            <input type="checkbox" id="other_service" name="service" value="other">
+            <label for="other_service">Other</label>
+        </fieldset>
+
+        <label for="purpose">What does music do for you?</label>
+        <select id="purpose" name="purpose" size="3">
+            <option value="relax">Relax</option>
+            <option value="motivate">Motivate</option>
+            <option value="focus">Focus</option>
+            <option value="reflect">Reflect</option>
+        </select>
+
+        <label for="song_meaning">What's your favorite song and what does it mean to you?</label>
+        <textarea id="song_meaning" name="song_meaning" rows="3" cols="60"></textarea>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <footer>
+        <p>Thomas Schulte</p>
+        <p>thomas_schulte@insideranken.org</p>
+    </footer>
+</body>
+</html>
