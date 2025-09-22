@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<!--
+    Name: Thomas Schulte
+    File Name: contact.html
+    Date: 9/6/2025
+-->
+
+<html lang="en">
+    <head>
+        <title>Contact - Thomas Schulte</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
+
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Thomas Schulte</h1>
+
+            <figure>
+                <img src="images/me.png" alt="picture of me" class="rounded">
+                <figcaption class="tagline">"<span class="highlight">Learning to code</span> my way to the future"</figcaption>
+            </figure>
+        </header>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <section id="infolist" aria-labelledby="contact-heading">
+                <h2 id="contact-heading" class="sr-only">Contact Information</h2>
+
+                <aside class="contact-methods">
+                    <ul>
+                        <li>Phone: (636) 331-9067</li>
+                        <li>Personal email: <a href="mailto:ts2378202@gmail.com">ts2378202@gmail.com</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Mobile-only -->
+                <p class="mobile-only">Contact details optimized for mobile view.</p>
+
+                <!-- Tablet + Desktop -->
+                <p class="tablet-desktop-only">You’re viewing extended contact info for larger screens.</p>
+
+                <!-- Desktop-only -->
+                <p class="desktop-only">Desktop users can also view the map below in full width.</p>
+
+                <!-- Responsive Map (now semantic: figure) -->
+                <figure class="map-wrapper">
+                    <figcaption class="sr-only">Map showing Ranken Technical College - West location</figcaption>
+                    <div class="map-container">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3108.1077037525056!2d-90.8347862175432!3d38.82999415607438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87dec6090699e0d9%3A0x1fbd741bbef51395!2sRanken%20Technical%20College%20-%20West!5e0!3m2!1sen!2sus!4v1756580990583!5m2!1sen!2sus"
+                            title="Google Maps Location"
+                            width="100%"
+                            height="100%"
+                            style="border: 0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </figure>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p><a href="mailto:thomas_schulte@insideranken.org">thomas_schulte@insideranken.org</a></p>
+            <p>&copy; Copyright 2025. Thomas Schulte</p>
+        </footer>
+
+    </body>
+</html>
