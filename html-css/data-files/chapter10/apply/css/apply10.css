@@ -1,7 +1,7 @@
 /*
-    Student Name
-	File Name: 
-	Current Date: 
+    Student Name: Thomas Schulte
+	File Name: apply10.css
+	Current Date: 9/27/2025
 */
 
 /* CSS reset */
@@ -32,7 +32,7 @@ main {
 	margin: 0 2%;
 	padding: 1em;
 	background-color: #fff;
-	border: 5px double #33091b; 
+	border: 5px double #33091b;
     padding: 2%;
 }
 
@@ -54,7 +54,28 @@ button {
     height: 200px;
     background-color: #33091b;
     margin-left: 6%;
+
+	-webkit-animation-name: color;
+	animation-name: color;
+	animation-duration: 5s;
 }
+
+.square:hover {
+	transform: translate(80px);
+}
+
+/* Animation */
+
+@-webkit-keyframes color {
+	from {background-color:#fbdae9 ;}
+	to {background-color:#660b32;}
+}
+
+@keyframes color {
+	from {background-color: #fbdae9;}
+	to {background-color: #660b32;}
+}
+
 
 /* Style rules for the footer */
 footer {
