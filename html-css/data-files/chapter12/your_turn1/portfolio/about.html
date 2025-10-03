@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<!--
+    Name: Thomas Schulte
+    File Name: about.html
+    Date: 9/26/2025
+-->
+
+
+<html lang="en">
+    <head>
+        <title>About - Thomas Schulte</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap" rel="stylesheet">
+
+        <!-- CSS Stylesheet -->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body>
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav">
+            <div id="nav-links">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Me</a>
+                <a href="contact.html">Contact</a>
+                <a href="blog.html">Blog</a>
+                <a href="projects.html">Projects</a>
+            </div>
+            <a class="nav-icon" onclick="hamburger()">
+                <div id="icon">&#9776;</div>
+            </a>
+        </nav>
+
+        <header>
+            <h1>Thomas Schulte</h1>
+
+            <figure>
+                <img src="images/me.png" alt="picture of me" class="rounded">
+                <figcaption class="tagline">"<span class="highlight">Learning to code</span> my way to the future"</figcaption>
+            </figure>
+        </header>
+
+        <!-- Mobile-friendly nav -->
+        <nav class="tab-desk">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Page-specific content goes here -->
+            <article>
+                <p>placeholder</p>
+            </article>
+
+            <h3>Random Song (CH9)</h3>
+            <p>Flight - Tristam & Braken</p>
+            <audio controls>
+                <source src="media/Flight.mp3">
+                <source src="media/Flight.ogg">
+                <p>Your browser does not support the audio element.</p>
+            </audio>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p><a href="mailto:thomas_schulte@insideranken.org">thomas_schulte@insideranken.org</a></p>
+            <p>&copy; Copyright 2025. Thomas Schulte</p>
+        </footer>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!--
+    Name: Thomas Schulte
+    File Name: home.html
+    Date: 9/12/2025
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - The Regal Hound</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<!-- Mobile Nav -->
+    <nav class="mobile-nav">
+        <div id="nav-links">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="groomers.html">Our Groomers</a>
+        </div>
+        <a class="nav-icon" onclick="hamburger()">
+            <div id="icon">&#9776;</div>
+        </a>
+    </nav>
+
+    <header class="site-header">
+        <h1 class="site-title">The Regal Hound</h1>
+        <h3 class="site-tagline">Treat your pup like royalty.</h3>
+
+        <figure class="banner-figure">
+            <img class="banner-img" src="images/dog-banner.jpg" alt="banner showing various dogs">
+            <figcaption>Our happy clients — comfortable, clean, and loved.</figcaption>
+        </figure>
+    </header>
+
+    <nav class="site-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+            <li class="nav-item"><a href="groomers.html" class="nav-link">Our Groomers</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <section class="welcome-box">
+            <p>Welcome to The Regal Hound! We pamper your pets like royalty.</p>
+        </section>
+
+        <video controls poster="images/dog-towel.jpg">
+            <source src="media/groom.mp4" type="video/mp4">
+            <source src="media/groom.webm" type="video/webm">
+            <track src="media/captions.vtt" kind="captions" srclang="en" label="English">
+            <track src="media/descriptions.vtt" kind="descriptions" srclang="en" label="English Description">
+            <p>Your browser does not support the video element.</p>
+        </video>
+
+        <!-- Added Table Section -->
+        <section class="services-table-box">
+            <h2>Our Grooming Packages</h2>
+
+            <!-- Table for desktop/tablet -->
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th>Package</th>
+                        <th>Duration</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic Groom</td>
+                        <td>30 min</td>
+                        <td>$25</td>
+                    </tr>
+                    <tr>
+                        <td>Full Groom</td>
+                        <td>60 min</td>
+                        <td>$50</td>
+                    </tr>
+                    <tr>
+                        <td>Luxury Bath</td>
+                        <td>45 min</td>
+                        <td>$40</td>
+                    </tr>
+                    <tr>
+                        <td>Nail Trim</td>
+                        <td>15 min</td>
+                        <td>$15</td>
+                    </tr>
+                    <tr>
+                        <td>Ear Cleaning</td>
+                        <td>10 min</td>
+                        <td>$10</td>
+                    </tr>
+                    <tr>
+                        <td>Teeth Brushing</td>
+                        <td>10 min</td>
+                        <td>$12</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Mobile-friendly list alternative -->
+            <ul class="services-list-mobile">
+                <li><strong>Basic Groom:</strong> 30 min — $25</li>
+                <li><strong>Full Groom:</strong> 60 min — $50</li>
+                <li><strong>Luxury Bath:</strong> 45 min — $40</li>
+                <li><strong>Nail Trim:</strong> 15 min — $15</li>
+                <li><strong>Ear Cleaning:</strong> 10 min — $10</li>
+                <li><strong>Teeth Brushing:</strong> 10 min — $12</li>
+            </ul>
+        </section>
+
+        <!-- Added Form Section -->
+        <section class="appointment-form-box">
+            <h2>Book an Appointment</h2>
+            <form class="appointment-form">
+                <fieldset>
+                    <legend>Owner Info</legend>
+                    <label for="owner-name">Name:</label>
+                    <input type="text" id="owner-name" name="owner-name" required>
+
+                    <label for="owner-email">Email:</label>
+                    <input type="email" id="owner-email" name="owner-email" required>
+
+                    <label for="owner-phone">Phone:</label>
+                    <input type="tel" id="owner-phone" name="owner-phone" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pet Info & Service</legend>
+                    <label for="pet-name">Pet Name:</label>
+                    <input type="text" id="pet-name" name="pet-name" required>
+
+                    <label for="service-type">Service:</label>
+                    <select id="service-type" name="service-type">
+                        <option value="basic-groom">Basic Groom</option>
+                        <option value="full-groom">Full Groom</option>
+                        <option value="luxury-bath">Luxury Bath</option>
+                        <option value="nail-trim">Nail Trim</option>
+                        <option value="ear-cleaning">Ear Cleaning</option>
+                        <option value="teeth-brushing">Teeth Brushing</option>
+                    </select>
+
+                    <label for="appointment-date">Preferred Date:</label>
+                    <input type="date" id="appointment-date" name="appointment-date" required>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p><a href="mailto:theregalhound@grooming.co" class="footer-link">theregalhound@grooming.co</a></p>
+        <p>&copy; Copyright 2025. All Rights Reserved.</p>
+    </footer>
+    <script src="scripts/script.js"></script>
+</body>
+</html>

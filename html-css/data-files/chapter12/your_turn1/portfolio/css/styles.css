@@ -1,0 +1,328 @@
+/*
+Name: Thomas Schulte
+Date: 9/21/2025
+File name: styles.css
+*/
+
+/* CSS Reset */
+body, header, nav, main, footer, h1, h3, img, ul, li, article, section, aside, figure, figcaption, table, th, td, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Utility: visually hidden for accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* General body styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f0f0f0;
+    line-height: 1.5;
+    color: #111111;
+}
+
+/* Style rules for image */
+img {
+    max-width: 100%;
+    margin: auto;
+    display: block;
+}
+
+/* Rounded class for profile pic or containers */
+.rounded {
+    border-radius: 12px;
+}
+
+/* HEADER STYLES */
+header {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Header title with subtle text shadow */
+header h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7); /* text shadow requirement */
+}
+
+/* Figure inside header */
+header figure {
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+/* Tagline (figcaption) styling for header */
+header .tagline {
+    display: block;
+    margin-top: 10px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #f0e9d2;
+}
+
+/* Highlight class (example second class) */
+.highlight {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* NAVIGATION STYLES */
+.tab-desk {
+    display: none;
+}
+
+nav {
+    background-color: #333;
+}
+
+.mobile-nav {
+    background-color: #333;
+    overflow: hidden;
+}
+
+#nav-links {
+    display: none;
+    background-color: #333;
+    text-align: center;
+}
+
+#nav-links a {
+    display: block;
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+}
+
+#nav-links a:hover {
+    background-color: #444;
+    color: #ff6600;
+}
+
+.nav-icon {
+    display: block;
+    text-align: right;
+    padding: 12px;
+    background-color: #333;
+}
+
+#icon {
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* smooth animation */
+}
+
+#icon.active {
+    transform: rotate(90deg); /* rotates the hamburger when active */
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav li {
+    margin: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+nav a:hover {
+    background-color: #444;
+    color: #ff6600;
+}
+
+/* MAIN CONTENT STYLES */
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    color: #111111;
+    font-family: 'Roboto', Arial, sans-serif;
+    min-height: 200px;
+}
+
+/* ID selector example */
+#intro {
+    font-size: 1.1em;
+    border-left: 4px solid #ff6600;
+    padding-left: 10px;
+}
+
+/* FOOTER STYLES */
+footer {
+    text-align: center;
+    background-color: #1a1a1a;
+    color: #f5f5f5;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ff6600;
+}
+
+/* TECH TABLE STYLES */
+.tech-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.tech-table th, .tech-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.tech-table th {
+    background-color: #ff6600;
+    color: #fff;
+}
+
+.tech-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.tech-list li {
+    padding: 5px 0;
+}
+
+/* CONTACT FORM STYLES */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.contact-form label {
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 10px;
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #ffcc00;
+    color: #1a1a1a;
+}
+
+/* Media Query for Tablets */
+@media screen and (min-width: 600px) {
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li {
+        margin: 0 15px;
+    }
+
+    nav a {
+        border-bottom: none;
+    }
+
+    header img {
+        width: 300px;
+    }
+
+    .mobile-only, .mobile-nav {
+        display: none;
+    }
+
+    .tablet-desktop-only, .tab-desk {
+        display: block;
+    }
+
+}
+
+/* Media query for desktops */
+@media screen and (min-width: 992px) {
+    body {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+    }
+
+    nav a:hover {
+        background-color: #ffcc00;
+        color: #1a1a1a;
+    }
+
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only, .tablet-only, .mobile-nav {
+        display: none;
+    }
+}
+
+/* Media query for very wide screens */
+@media screen and (min-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mobile-nav {
+        display: none;
+    }
+}
+
+
