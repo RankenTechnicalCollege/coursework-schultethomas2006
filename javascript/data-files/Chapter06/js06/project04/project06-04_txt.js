@@ -1,13 +1,13 @@
 "use strict";
-/*    JavaScript 7th Edition
-      Chapter 6
-      Project 06-04
+/*    JavaScript 7th Edition
+      Chapter 6
+      Project 06-04
 
-      Project to turn a selection list into a selection of hypertext links
-      Author: 
-      Date:   
+      Project to turn a selection list into a selection of hypertext links
+      Author: Thomas SChulte
+      Date:   11/16/25
 
-      Filename: project06-04.js
+      Filename: project06-04.js
 */
 
 // Selection lists in the web form
@@ -32,18 +32,50 @@ let selectVehicle = document.getElementById("selectVehicle");
 let vehicle = document.getElementById("vehicle");
 
 
+
+/**
+ *
+ * @param {HTMLSelectElement} selectList
+ */
+function showAll(selectList) {
+   let options = selectList.options;
+   let optionLength = options.length;
+
+   for (let i = 0; i < optionLength; i++) {
+      options[i].style.display = "block";
+   }
+}
+
+/**
+ *
+ * @param {HTMLSelectElement} selectList
+ * @param {string} category
+ */
+function filterSelect(selectList, category) {
+   let options = selectList.options;
+   let optionLength = options.length;
+
+   for (let i = 0; i < optionLength; i++) {
+      if (options[i].className === category) {
+      options[i].style.display = "block";
+      } else {
+      options[i].style.display = "none";
+      }
+   }
+}
+
 // Event handler to modify the content of the Model selection list
 // when the Make selection list changes
 
 make.onchange = function() {
    let makeIndex = make.selectedIndex;
    let makeCategory = make.options[makeIndex].text;
-   
+
    if (makeIndex === 0) {
       showAll(model);
    } else {
       filterSelect(model, makeCategory);
-   }  
+   }
 }
 
 // Event handler to modify the content of the Trim selection list
@@ -52,11 +84,19 @@ make.onchange = function() {
 model.onchange = function() {
    let modelIndex = model.selectedIndex;
    let modelCategory = model.options[modelIndex].text;
-   
+
    if (modelIndex === 0) {
       showAll(trim);
    } else {
       filterSelect(trim, modelCategory);
-   }     
+   }
 }
 
+// Event handler for the Select button
+selectVehicle.onclick = function() {
+   let selectedMake = make.options[make.selectedIndex].text;
+   let selectedModel = model.options[model.selectedIndex].text;
+   let selectedTrim = trim.options[trim.selectedIndex].text;
+
+   vehicle.textContent = selectedMake + " " + selectedModel + " " + selectedTrim;
+}

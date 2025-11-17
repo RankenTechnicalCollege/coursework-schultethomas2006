@@ -6,8 +6,8 @@
       Chapter 6
       Hands-on Project 6-1
 
-      Author: 
-      Date:   
+      Author: Thomas Schulte
+      Date: 11/16/25
 
       Filename: formsubmit.html
    -->
@@ -16,7 +16,7 @@
    <title>Hands-on Project 6-1</title>
    <link rel="stylesheet" href="styles.css" />
    <script>
-      window.addEventListener("load", function(){   
+      window.addEventListener("load", function(){
          // Retrieve the field/value pairs from the URL
          var formData = location.search.slice(1);
          formData = formData.replace(/\+/g," ");
@@ -24,11 +24,11 @@
          let formFields = formData.split(/[&=]/g);
 
          // Write the field values to the account table
-         document.getElementById("username").textContent = formFields[1]; 
-         document.getElementById("email").textContent = formFields[3]; 
-         document.getElementById("pwd").textContent = formFields[5]; 
-         document.getElementById("pwd2").textContent = formFields[7];          
-      } );   
+         document.getElementById("username").textContent = formFields[1];
+         document.getElementById("email").textContent = formFields[3];
+         document.getElementById("pwd").textContent = formFields[5];
+         document.getElementById("pwd2").textContent = formFields[7];
+      } );
    </script>
 </head>
 
@@ -49,7 +49,7 @@
          <tr>
             <td>Email</td>
             <td><span id="email"></span></td>
-         </tr> 
+         </tr>
          <tr>
             <td>Password</td>
             <td><span id="pwd"></span></td>
@@ -57,7 +57,7 @@
          <tr>
             <td>Confirm Password</td>
             <td><span id="pwd2"></span></td>
-         </tr>             
+         </tr>
       </table>
    </section>
 </body>
