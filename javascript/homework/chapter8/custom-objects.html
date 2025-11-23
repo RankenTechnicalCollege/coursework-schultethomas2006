@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Custom Objects Homework</title>
+</head>
+<body>
+    <h1>JavaScript Custom Objects Homework</h1>
+    <p>Open the console (F12 or Ctrl+Shift+I) to see the output from the exercises.</p>
+
+    <script>
+        console.log("--- Exercise 1: Library Book System ---");
+
+        function Book(title, author, isbn, pages, isAvailable) {
+            this.title = title;
+            this.author = author;
+            this.isbn = isbn;
+            this.pages = pages;
+            this.isAvailable = isAvailable;
+        }
+
+        Book.prototype.getInfo = function() {
+            return `${this.title} by ${this.author} (ISBN: ${this.isbn}), ${this.pages} pages. Available: ${this.isAvailable}`;
+        };
+
+        Book.prototype.checkOut = function() {
+            if (this.isAvailable) {
+                this.isAvailable = false;
+                console.log(`"${this.title}" has been checked out.`);
+            } else {
+                console.log(`"${this.title}" is already checked out.`);
+            }
+        };
+
+        Book.prototype.returnBook = function() {
+            if (!this.isAvailable) {
+                this.isAvailable = true;
+                console.log(`"${this.title}" has been returned.`);
+            } else {
+                console.log(`"${this.title}" is already available.`);
+            }
+        };
+
+        console.log("Creating 2 book instances...");
+        const book1 = new Book("The Hobbit", "J.R.R. Tolkien", "978-0618260300", 310, true);
+        const book2 = new Book("1984", "George Orwell", "978-0451524935", 328, true);
+
+        console.log("--- Testing Book 1 ---");
+        console.log(book1.getInfo());
+        book1.checkOut();
+        console.log(book1.getInfo());
+        book1.checkOut();
+        book1.returnBook();
+        console.log(book1.getInfo());
+
+        console.log("--- Testing Book 2 ---");
+        console.log(book2.getInfo());
+        book2.checkOut();
+        console.log(book2.getInfo());
+        console.log("----------------------------------------\n");
+    </script>
+
+    <script>
+        console.log("--- Exercise 2: Student Grade Manager ---");
+
+        function Student(firstName, lastName, studentid, grades) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.studentid = studentid;
+            this.grades = grades;
+        }
+
+        Student.prototype.calculateAverage = function() {
+            if (this.grades.length === 0) {
+                return 0;
+            }
+            const sum = this.grades.reduce((total, grade) => total + grade, 0);
+            return sum / this.grades.length;
+        };
+
+        Student.prototype.getLetterGrade = function() {
+            const average = this.calculateAverage();
+            if (average >= 90) return 'A';
+            if (average >= 80) return 'B';
+            if (average >= 70) return 'C';
+            if (average >= 60) return 'D';
+            return 'F';
+        };
+
+        Student.prototype.addGrade = function(grade) {
+            this.grades.push(grade);
+            console.log(`Added grade ${grade}. New grades: [${this.grades}]`);
+        };
+
+        console.log("Creating 2 student instances...");
+        const student1 = new Student("Alice", "Smith", "s123", [85, 92, 78]);
+        const student2 = new Student("Bob", "Johnson", "s124", [60, 65, 70]);
+
+        console.log("--- Testing Student 1 ---");
+        console.log(`Student: ${student1.firstName} ${student1.lastName}`);
+        console.log(`Grades: [${student1.grades}]`);
+        console.log(`Average: ${student1.calculateAverage()}`);
+        console.log(`Letter Grade: ${student1.getLetterGrade()}`);
+        student1.addGrade(95);
+        console.log(`New Average: ${student1.calculateAverage()}`);
+        console.log(`New Letter Grade: ${student1.getLetterGrade()}`);
+
+        console.log("--- Testing Student 2 ---");
+        console.log(`Student: ${student2.firstName} ${student2.lastName}`);
+        console.log(`Grades: [${student2.grades}]`);
+        console.log(`Average: ${student2.calculateAverage()}`);
+        console.log(`Letter Grade: ${student2.getLetterGrade()}`);
+        student2.addGrade(55);
+        console.log(`New Average: ${student2.calculateAverage()}`);
+        console.log(`New Letter Grade: ${student2.getLetterGrade()}`);
+        console.log("----------------------------------------\n");
+    </script>
+
+    <script>
+        console.log("--- Exercise 3: Bank Account ---");
+
+        function BankAccount(accountHolder, initialBalance) {
+            let balance = initialBalance;
+            this.accountHolder = accountHolder;
+
+            this.getBalance = function() {
+                return balance;
+            };
+
+            this.deposit = function(amount) {
+                if (amount > 0) {
+                    balance += amount;
+                    console.log(`Account ${this.accountHolder}: Deposited $${amount}. New balance: $${balance}.`);
+                    return true;
+                } else {
+                    console.log(`Account ${this.accountHolder}: Deposit amount must be positive.`);
+                    return false;
+                }
+            };
+
+            this.withdraw = function(amount) {
+                if (amount <= 0) {
+                    console.log(`Account ${this.accountHolder}: Withdrawal amount must be positive.`);
+                    return false;
+                }
+                if (amount > balance) {
+                    console.log(`Account ${this.accountHolder}: Insufficient funds. Cannot withdraw $${amount}. Current balance: $${balance}.`);
+                    return false;
+                }
+                balance -= amount;
+                console.log(`Account ${this.accountHolder}: Withdrew $${amount}. New balance: $${balance}.`);
+                return true;
+            };
+        }
+
+        BankAccount.prototype.transfer = function(amount, targetAccount) {
+            console.log(`--- Attempting transfer of $${amount} from ${this.accountHolder} to ${targetAccount.accountHolder} ---`);
+            if (this.withdraw(amount)) {
+                if (targetAccount.deposit(amount)) {
+                    console.log("--- Transfer successful ---");
+                } else {
+                    console.log("--- Transfer failed on deposit. Refunding sender. ---");
+                    this.deposit(amount);
+                }
+            } else {
+                console.log("--- Transfer failed. See withdrawal error. ---");
+            }
+        };
+
+        console.log("Creating 2 account instances...");
+        const acc1 = new BankAccount("Charlie", 1000);
+        const acc2 = new BankAccount("Dana", 500);
+
+        console.log("--- Test getBalance ---");
+        console.log(`Charlie's balance: $${acc1.getBalance()}`);
+        console.log(`Dana's balance: $${acc2.getBalance()}`);
+
+        console.log("\n--- Test deposit (and validation) ---");
+        acc1.deposit(200);
+        acc1.deposit(-50);
+
+        console.log("\n--- Test withdraw (and validation) ---");
+        acc2.withdraw(100);
+        acc2.withdraw(-20);
+        acc2.withdraw(9000);
+
+        console.log("\n--- Test transfer (and validation) ---");
+        console.log(`Initial balances: Charlie $${acc1.getBalance()}, Dana $${acc2.getBalance()}`);
+        acc1.transfer(300, acc2);
+        console.log(`Post-transfer balances: Charlie $${acc1.getBalance()}, Dana $${acc2.getBalance()}`);
+
+        console.log("\n--- Test invalid transfer (insufficient funds) ---");
+        acc1.transfer(5000, acc2);
+        console.log(`Balances unchanged: Charlie $${acc1.getBalance()}, Dana $${acc2.getBalance()}`);
+        console.log("----------------------------------------\n");
+    </script>
+
+    <script>
+        console.log("--- Exercise 4: Vehicle Inheritance ---");
+
+        function Vehicle(make, model, year, color) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
+        }
+
+        Vehicle.prototype.getInfo = function() {
+            return `${this.year} ${this.color} ${this.make} ${this.model}`;
+        };
+
+        function Car(make, model, year, color, numDoors) {
+            Vehicle.call(this, make, model, year, color);
+            this.numDoors = numDoors;
+        }
+
+        Car.prototype = Object.create(Vehicle.prototype);
+        Car.prototype.constructor = Car;
+
+        Car.prototype.honk = function() {
+            console.log("Beep beep!");
+        };
+
+        function Truck(make, model, year, color, bedLength) {
+            Vehicle.call(this, make, model, year, color);
+            this.bedLength = bedLength;
+        }
+
+        Truck.prototype = Object.create(Vehicle.prototype);
+        Truck.prototype.constructor = Truck;
+
+        Truck.prototype.loadCargo = function() {
+            console.log(`Loading cargo into the ${this.bedLength} truck bed.`);
+        };
+
+        console.log("Creating 1 Car and 1 Truck instance...");
+        const myCar = new Car("Toyota", "Camry", 2022, "Blue", 4);
+        const myTruck = new Truck("Ford", "F-150", 2020, "Red", "6.5ft");
+
+        console.log("\n--- Testing Car Instance ---");
+        console.log(myCar.getInfo());
+        myCar.honk();
+        console.log(`Doors: ${myCar.numDoors}`);
+
+        console.log("\n--- Testing Truck Instance ---");
+        console.log(myTruck.getInfo());
+        myTruck.loadCargo();
+        console.log(`Bed Length: ${myTruck.bedLength}`);
+        console.log("----------------------------------------\n");
+    </script>
+
+</body>
+</html>
