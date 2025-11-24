@@ -6,8 +6,8 @@
       Chapter 8
       Hands-on Project 8-3
 
-      Author: 
-      Date:   
+      Author: Thomas Schulte
+      Date:   11/23/25
 
       Filename: project08-03.html
    -->
@@ -15,6 +15,7 @@
    <meta name="viewport" content="width=device-width,initial-scale=1.0">
    <title>Hands-on Project 8-3</title>
    <link rel="stylesheet" href="styles.css" />
+   <script src="project08-03_txt.js" defer></script>
 </head>
 
 <body>
@@ -31,18 +32,18 @@
          <label id="sizeLabel" for="pizzaSize">Size (in.)</label>
          <select id="pizzaSize" name="pizzaSize">
             <option value='12"'>12"</option>
-            <option value='14"' selected>14"</option> 
-            <option value='16"'>16"</option>                                
-         </select>         
+            <option value='14"' selected>14"</option>
+            <option value='16"'>16"</option>
+         </select>
          <label for="crustBox">Pizza Crust</label>
          <select name="pizzaCrust" id="pizzaCrust">
             <option value="thin" selected>thin</option>
             <option value="thick">thick</option>
             <option value="stuffed">stuffed</option>
             <option value="pan">pan</option>
-         </select>         
+         </select>
       </fieldset>
-      
+
       <fieldset id="toppings">
          <div>
             <label>Toppings ($1.50 ea.)</label>
@@ -114,8 +115,8 @@
             <input class="topping" type="radio" name="jalapeno" value="right" />
             <input class="topping" type="radio" name="jalapeno" value="none" checked />
          </div>
-      </fieldset>   
-      
+      </fieldset>
+
       <div id="previewBox"></div>
       <input type="button" value = "ADD TO CART" id="addToCart" />
       <aside>

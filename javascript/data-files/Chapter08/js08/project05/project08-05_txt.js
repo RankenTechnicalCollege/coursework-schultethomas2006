@@ -4,8 +4,8 @@
       Project 08-05
 
       Interface to replay a chess game stored in a JSON file
-      Author: 
-      Date:   
+      Author: Thomas Schulte
+      Date:   11/23/25
 
       Filename: project08-05.js
 */
@@ -18,7 +18,7 @@ let moveLog = document.getElementById("moveLog");         // ol element containi
 let moveSpans = moveLog.getElementsByTagName("span");     // span element containing the individual moves
 let nextButton = document.getElementById("nextButton");   // button to move forward through the game
 let prevButton = document.getElementById("prevButton");   // button to move backward through the game
-let getLogButton = document.getElementById("getLog");     // button to retrieve game log stored in a JSON file 
+let getLogButton = document.getElementById("getLog");     // button to retrieve game log stored in a JSON file
 let blackBox = document.getElementById("blackBox");       // box containing captured black pieces
 let whiteBox = document.getElementById("whiteBox");       // box containing captured white pieces
 let titleBox = document.getElementById("title");          // h1 heading for game title
@@ -27,39 +27,39 @@ let descBox = document.getElementById("description");     // paragraph for game 
 getLogButton.onchange = function() {
    // Retrieve information about the selected file
    let JSONfile = this.files[0];
-   
+
    // Read the contents of the selected file
    let fr = new FileReader();
-   fr.readAsText(JSONfile); 
+   fr.readAsText(JSONfile);
 
    // Once the file has finished loading, parse the JSON file
    // and store the contents in the game object literal
-   fr.onload=function(){ 
-      // Load data from the JSON file into the game object
-      let game = json.parse(fr.result);
-      
+   fr.onload=function(){
+// Load data from the JSON file into the game object
+      let game = JSON.parse(fr.result);
+
       titleBox.textContent = game.title;
       descBox.textContent = game.description;
-      
+
       writeMoveLog(game.moves);
-      
+
       // Create a new chess set object
-      let mySet = chessSet(game);
-      
+      let mySet = new chessSet(game); // Added 'new'
+
       setupBoard(mySet);
-      
+
       nextButton.onclick = function() {
          if (game.move < game.moves.length - 1) {
-            showNextBoard(game);           
+            showNextBoard(game);
          }
       }
       prevButton.onclick = function() {
          if (game.move > -1) {
-            showPrevBoard(game);           
+            showPrevBoard(game);
          }
-      }      
+      }
    }
-   
+
 };
 
 function writeMoveLog(moves) {
@@ -73,12 +73,12 @@ function writeMoveLog(moves) {
 
       // add the black move for each round
       let blackMove = document.createElement("span");
-      blackMove.textContent = moves[i+1];   
-      newLI.appendChild(blackMove); 
+      blackMove.textContent = moves[i+1];
+      newLI.appendChild(blackMove);
 
       // Append the two moves to the ordered list
       moveLog.appendChild(newLI);
-   }   
+   }
 }
 
 function setupBoard(set) {
@@ -88,7 +88,7 @@ function setupBoard(set) {
       let parentCell = piecesOnBoard[i].parentElement;
       parentCell.removeChild(parentCell.lastElementChild);
    }
-   
+
    // Place chess pieces on the board.
    for (let i = 0; i < set.pieces.length; i++) {
       let pieceImage = document.createElement("span");
@@ -96,20 +96,20 @@ function setupBoard(set) {
       pieceImage.className = set.pieces[i].color;
       let chessSquare = document.getElementById(set.pieces[i].square);
       chessSquare.appendChild(pieceImage);
-   } 
+   }
 }
 
 
 /* Function to update the board when the next move is played */
 function showNextBoard(game) {
    game.move++;
-   
+
    // Highlight the move text in the move log
    moveSpans[game.move].className = "highlight";
-   
-   // Read the notation for the next move 
+
+   // Read the notation for the next move
    let moveStr = game.moves[game.move];
-   
+
    if (moveStr === "1-0") {
       window.alert("Black Resigns");
    } else if (moveStr === "0-1") {
@@ -127,12 +127,12 @@ function showNextBoard(game) {
    } else if (moveStr.includes("-")) {
       movePiece();
    }
-   
+
    // Move the piece image from the starting cell to the ending cell
-   function moveCell(start, end) {    
-      document.getElementById(end).appendChild(document.getElementById(start).firstElementChild);      
+   function moveCell(start, end) {
+      document.getElementById(end).appendChild(document.getElementById(start).firstElementChild);
    }
-   
+
    // Move the piece image into the cell and move the occupying piece back to the box
    function removeCell(cell) {
       // Moves a captured piece to the box
@@ -142,7 +142,7 @@ function showNextBoard(game) {
          whiteBox.appendChild(document.getElementById(cell).firstElementChild);
       }
    }
-   
+
    // Perform a kingside castle
    function kingSideCastle() {
       if (game.move % 2 === 0) {  // white kingside castle
@@ -153,7 +153,7 @@ function showNextBoard(game) {
          moveCell("h8", "f8");
       }
    }
-   
+
    // Perform a queenside castle
    function queenSideCastle() {
       if (game.move % 2 === 1) {  // white queenside castle
@@ -163,14 +163,14 @@ function showNextBoard(game) {
          moveCell("e8", "c8");
          moveCell("a8", "d8");
       }
-   }  
-   
+   }
+
    // Promote a pawn that reaches the end rank
    function pawnPromotion() {
       let mIndex = moveStr.indexOf("-");
       let startCell = moveStr.substr(mIndex - 2,2);
       let endCell = moveStr.substr(mIndex + 1, 2);
-      moveCell(startCell, endCell); 
+      moveCell(startCell, endCell);
       let newPiece = moveStr.charAt(moveStr.length - 1);
       let rankNum;
       switch (newPiece) {
@@ -180,15 +180,15 @@ function showNextBoard(game) {
          case "R": rankNum = 9814; break;   // unicode for white rook
          case "Q" : rankNum = 9813; break;  // unicode for white queen
          case "K" : rankNum = 9812; break;  // unicode for white king
-      }   
+      }
       if (game.move % 2 === 1) {   // move was made by black change unicode to black piece image
          rankNum+=6;
       }
-      
+
       // Change image to promoted piece
       document.getElementById(endCell).firstElementChild.innerHTML = "&#" + rankNum + ";";
    }
-   
+
    // Retrieve the address of starting cell and ending (occupied) cell
    function capturePiece() {
       let tIndex = moveStr.indexOf("x");
@@ -196,8 +196,8 @@ function showNextBoard(game) {
       let endCell = moveStr.substr(tIndex + 1, 2);
       removeCell(endCell);  // remove piece from the cell
       moveCell(startCell, endCell)
-   }   
-   
+   }
+
    // Retrieve the adress of the starting cell and ending (unoccupied) cell
    function movePiece() {
       let mIndex = moveStr.indexOf("-");
@@ -212,10 +212,10 @@ function showNextBoard(game) {
 function showPrevBoard(game) {
    // Remove highlighting from the move
    moveSpans[game.move].classList.remove("highlight");
-   
-   // Read the notation for of current move 
+
+   // Read the notation for of current move
    let moveStr = game.moves[game.move];
-   
+
    if (moveStr === "1-0") {
       // Do nothing in reverse
    } else if (moveStr === "0-1") {
@@ -233,15 +233,15 @@ function showPrevBoard(game) {
    } else if (moveStr.includes("-")) {
       movePiece();
    }
-   
+
    // Reduce the move number by 1
    game.move--;
-   
+
    // Move the piece back from its ending cell to its starting cell
-   function moveCell(start, end) {    
-      document.getElementById(end).appendChild(document.getElementById(start).firstElementChild);      
+   function moveCell(start, end) {
+      document.getElementById(end).appendChild(document.getElementById(start).firstElementChild);
    }
-   
+
    // Move a captured piece from its box back to the board
    function addCell(cell) {
       // Moves a captured piece to the box
@@ -251,7 +251,7 @@ function showPrevBoard(game) {
          document.getElementById(cell).appendChild(whiteBox.lastElementChild);
       }
    }
-   
+
    // Perform a kingside caste in reverse
    function kingSideCastle() {
       if (game.move % 2 === 0) {  // white kingside castle
@@ -262,7 +262,7 @@ function showPrevBoard(game) {
          moveCell("f8", "h8");
       }
    }
-   
+
    // Perform a queenside castle in reverse
    function queenSideCastle() {
       if (game.move % 2 === 1) {  // white queenside castle
@@ -272,27 +272,27 @@ function showPrevBoard(game) {
          moveCell("c8", "e8");
          moveCell("d8", "a8");
       }
-   }  
-   
+   }
+
    // Demote a pawn that had reached the end rank
    function pawnDemotion() {
       let mIndex = moveStr.indexOf("-");
       let startCell = moveStr.substr(mIndex + 1,2);
       let endCell = moveStr.substr(mIndex - 2, 2);
-      moveCell(startCell, endCell); 
+      moveCell(startCell, endCell);
       let newPiece = moveStr.charAt(moveStr.length - 1);
-      let rankNum;   
+      let rankNum;
       if (game.move % 2 === 1) {   // move was made by black change unicode to black piece image
          rankNum = 9823;
       } else {
          rankNum = 9817;
       }
-      
+
       // Change image to promoted piece
       document.getElementById(endCell).firstElementChild.innerHTML = "&#" + rankNum + ";";
-      
+
    }
-   
+
    // Find the addresses of the starting and ending cell during a capture
    function addPiece() {
       let tIndex = moveStr.indexOf("x");
@@ -300,15 +300,15 @@ function showPrevBoard(game) {
       let endCell = moveStr.substr(tIndex -2, 2);
       moveCell(startCell, endCell);
       addCell(startCell);
-   }   
-   
+   }
+
    // Find the addresses of the starting and ending cell during a move
    function movePiece() {
       let mIndex = moveStr.indexOf("-");
       let startCell = moveStr.substr(mIndex + 1,2);
       let endCell = moveStr.substr(mIndex -2, 2);
       moveCell(startCell, endCell);
-   }   
+   }
 }
 
 
